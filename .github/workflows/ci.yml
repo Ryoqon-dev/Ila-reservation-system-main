@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [main, develop]
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+
+jobs:
+  main-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch for main
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_REF: ${{ github.head_ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          BASE_REPO: ${{ github.repository }}
+        run: |
+          if [ "$BASE_REF" = main ] && { [ "$HEAD_REF" != develop ] || [ "$HEAD_REPO" != "$BASE_REPO" ]; }; then
+            echo "Pull requests to main must originate from this repository's develop branch."
+            exit 1
+          fi
+
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
+      - run: npm test

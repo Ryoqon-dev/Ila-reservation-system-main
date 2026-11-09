@@ -1,0 +1,40 @@
+{
+  "name": "ila-free-hosting",
+  "version": "1.10.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "node --test tests/*.test.mjs",
+    "check": "tsc --noEmit",
+    "prepare:hosting": "node scripts/hosting.mjs prepare",
+    "publish:private": "node scripts/hosting.mjs private",
+    "publish:public": "node scripts/hosting.mjs public",
+    "backup": "node scripts/hosting.mjs backup",
+    "check:worker": "wrangler deploy --dry-run --config wrangler.example.json --outdir worker-dist",
+    "check:runtime": "node scripts/runtime-check.mjs",
+    "update:accounts": "node scripts/apply-account-update.mjs --deploy",
+    "update:site": "node scripts/apply-site-update.mjs --deploy"
+  },
+  "dependencies": {
+    "lucide-react": "1.31.0",
+    "qrcode": "1.5.4",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@types/qrcode": "1.5.6",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "typescript": "5.9.3",
+    "vite": "8.3.4",
+    "wrangler": "4.152.0"
+  },
+  "overrides": {
+    "undici": "7.30.1"
+  }
+}

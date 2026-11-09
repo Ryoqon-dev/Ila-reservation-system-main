@@ -1,0 +1,25 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars*
+.secrets/
+wrangler.json
+backups/
+*.log
+worker-dist/
+
+# Local configuration, credentials and exports
+.env*
+wrangler.jsonc
+wrangler.toml
+*.pem
+*.key
+*.pfx
+*.p12
+*.sqlite*
+*.db*
+*.ilaenc
+*.csv
+*.sql
+!migrations/*.sql
+qa-render/
