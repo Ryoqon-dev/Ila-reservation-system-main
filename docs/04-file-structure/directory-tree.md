@@ -66,6 +66,13 @@ Ila-reservation-system/
 |       |-- README.md
 |       |-- backlog.md
 |       `-- priorities.md
+|-- desktop-admin/
+|   |-- src/
+|   |   |-- main/java/kr/ila/admin/
+|   |   |   |-- kits/csv/
+|   |   |   `-- modules/csv/
+|   |   `-- test/java/kr/ila/admin/kits/csv/
+|   `-- README.md
 |-- lib/
 |   |-- common/
 |   |   `-- input.mjs
@@ -197,6 +204,7 @@ Ila-reservation-system/
 | 경로 | 역할 |
 |---|---|
 | `docs/` | 7개 분야별 현행 설명과 과거 원문; 각 README가 목차 |
+| `desktop-admin/` | Java Swing 관리자 프로그램의 CSV 화면·파일 처리 모듈과 테스트 |
 | `src/` | React 화면·컨텍스트·입력/상태·브라우저 API 클라이언트 |
 | `lib/` | 서버 기능과 UI가 공유하는 규칙·API·보안·자료 관리 |
 | `migrations/` | D1 스키마·제약·트리거·뷰의 순차 변경 0001~0012 |

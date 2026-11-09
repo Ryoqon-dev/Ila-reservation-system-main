@@ -37,6 +37,10 @@ npm test
 
 업데이트 도구 테스트가 `dist/`의 파일을 확인하므로 **빌드 후 테스트** 순서입니다. 추가 로컬 검증은 [기술 스택과 명령](docs/01-overview/tech-stack.md)을 참고하세요.
 
+## Java Swing 관리자 프로그램
+
+`desktop-admin/`에는 팀 프로젝트에서 새로 만드는 Java Swing 관리자 프로그램의 CSV 기능이 있습니다. 현재는 CSV 화면·읽기·저장·형식 검사를 구현했으며, 서버 연동은 팀 공통 `ApiClient`가 준비되면 연결하도록 분리했습니다. Java 21 이상에서의 컴파일 및 테스트 방법은 [Java CSV 모듈 안내](desktop-admin/README.md)를 참고하세요.
+
 ## 운영 주의사항
 
 이 저장소에 푸시하거나 PR을 머지하는 것만으로 Cloudflare 운영 사이트가 배포되지는 않습니다. [배포·백업·복구 절차](docs/03-architecture/deployment-and-operations.md)를 먼저 읽으세요. 신규 설치와 기존 사이트 업데이트는 다른 작업입니다.

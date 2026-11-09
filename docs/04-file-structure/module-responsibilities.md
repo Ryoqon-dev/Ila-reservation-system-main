@@ -34,4 +34,8 @@
 
 `APPLY_SITE_UPDATE.cmd`와 `APPLY_REVIEW_UPDATE.cmd`는 각 진입 스크립트를 거쳐 같은 업데이트 구현을 사용합니다. `tests/`는 Node 자동 검사와 정적 UI/로컬 Worker 보조 코드를 포함합니다. 테스트별 상세 동작은 해당 테스트 본문을 확인하세요.
 
+## Java Swing 관리자 프로그램
+
+[desktop-admin](../../desktop-admin/README.md)은 기존 웹사이트와 별도로 만드는 Java 관리자 화면입니다. `modules/csv/`는 자료 종류·기간 선택, CSV 열기와 미리보기를 담당하고 `kits/csv/`는 CSV 읽기·저장·형식 검사를 담당합니다. 서버 자료 조회는 공통 `CsvExportService` 연결점으로 주입하며, 별도 HTTP 클라이언트를 만들지 않습니다.
+
 [파일 구조 목차](README.md)
